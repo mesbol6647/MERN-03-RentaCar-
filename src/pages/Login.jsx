@@ -8,8 +8,26 @@ import { Link } from "react-router-dom"
 import Box from "@mui/material/Box"
 import TextField from "@mui/material/TextField"
 import { Button } from "@mui/material"
+import { Form, Formik } from "formik"
+import { object, string, number, date, InferType } from 'yup';
+
+
 
 const Login = () => {
+  
+  const loginSchema = object({
+    
+    email: string().email("Lütfen geçerli bir email giriniz").required("Email girişi zorunludur"),
+    password: string()
+    .required("Şifre zorunludur.")
+    .min(8, "Şifre en az 8 karakter olmalıdır.")
+    .max(16, "Şifre en fazla 16 karakter olmalıdır.")
+    .matches(/\d+/, "Şifre en az bir rakam içermelidir")
+    .matches(/[a-z]/, "Şifre en az bir küçük karakter içermelidir")
+    .matches(/[A-Z]/, "Şifre en az bir büyük harf içermelidir")
+    .matches(/[@$!%*?&]+/, "Şifre en az bir özel karakter içermelidir"),
+    
+  });
     return (
     <Container maxWidth="lg">
       <Grid
@@ -47,9 +65,17 @@ const Login = () => {
             Login
           </Typography>
 
-          <Box
-            component="form"
-            sx={{ display: "flex", flexDirection: "column", gap: 2 }}
+<Formik
+initialValues={{email:"", password:""}}
+validationSchema={loginSchema}
+onSubmit={(values, actions)=>{
+  actions.resetForm()
+  actions.setSubmitting(false)
+}}
+> 
+{({handleChange, values,  touched, errors, handleBlur })=>(
+  <Form>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}
           >
             <TextField
               label="Email"
@@ -57,6 +83,11 @@ const Login = () => {
               id="email"
               type="email"
               variant="outlined"
+              value={values.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={touched.email && Boolean(errors.email)}
+              helperText={errors.email}
             />
             <TextField
               label="password"
@@ -64,11 +95,23 @@ const Login = () => {
               id="password"
               type="password"
               variant="outlined"
+              value={values.password}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={touched.password && Boolean(errors.password)}
+              helperText={errors.password}
             />
             <Button variant="contained" type="submit">
               Submit
             </Button>
-          </Box>
+          </Box></Form>
+)}
+
+
+
+
+</Formik>
+          
 
           <Box sx={{ textAlign: "center", mt: 2 }}>
             <Link to="/register">Do you have not an account?</Link>
