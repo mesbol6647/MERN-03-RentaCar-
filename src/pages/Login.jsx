@@ -10,10 +10,12 @@ import TextField from "@mui/material/TextField"
 import { Button } from "@mui/material"
 import { Form, Formik } from "formik"
 import { object, string, number, date, InferType } from 'yup';
+import useAuthCalls from "../service/useAuthCalls"
 
 
 
 const Login = () => {
+  const {login}=useAuthCalls()
   
   const loginSchema = object({
     
@@ -69,6 +71,7 @@ const Login = () => {
 initialValues={{email:"", password:""}}
 validationSchema={loginSchema}
 onSubmit={(values, actions)=>{
+  login(values)
   actions.resetForm()
   actions.setSubmitting(false)
 }}
