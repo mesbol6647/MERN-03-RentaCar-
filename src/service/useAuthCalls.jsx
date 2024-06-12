@@ -5,18 +5,21 @@ import{fetchFail, fetchStart, loginSuccess, logoutSuccess, registerSuccess} from
 import { useDispatch, useSelector } from "react-redux"
 
 import React from 'react'
+import useAxios from "./useAxios"
 
 const useAuthCalls = () => {
      const navigate=useNavigate()
      const dispatch = useDispatch()
      const {token}= useSelector((state) =>state.auth)
+     const {axiosWithToken,axiosPublic}=useAxios()
 
      const login = async (userInfo)=>{ 
         dispatch (fetchStart())       
     try {
-        const {data} = await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/login`,
-            userInfo
-        )
+        // const {data} = await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/login`,
+        //     userInfo
+        // )
+        const {data}=await axiosPublic("/auth/login", userInfo) 
         dispatch(loginSuccess(data))
         toastSuccessNotify("Login is Success")
         navigate("/home" )
@@ -44,12 +47,14 @@ const useAuthCalls = () => {
      const logout = async ()=>{
         dispatch(fetchStart())
         try {
-                 await axios.get(
-                `${process.env.REACT_APP_BASE_URL}/auth/logout`, 
-                  {
-                   headers: {Authorization: `Token ${token}` },
-                  } 
-             )   
+            //      await axios.get(
+            //     `${process.env.REACT_APP_BASE_URL}/auth/logout`, 
+            //       {
+            //        headers: {Authorization: `Token ${token}` },
+            //       } ) 
+             
+            // await axiosWithToken.get() .get yazssakta olur yazmasakda olur ama post put delete de ihtiyaç var
+             await axiosWithToken("/auth/logout")
              toastSuccessNotify("Logout is Success")
              dispatch(logoutSuccess())
         // navigate("/")
