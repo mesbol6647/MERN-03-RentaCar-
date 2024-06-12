@@ -13,8 +13,8 @@ import { Form, Formik } from "formik"
 import useAuthCalls from "../service/useAuthCalls"
 
 const Register = () => {
-  // const navigate = useNavigate()
-  // const {register}=useAuthCalls()
+  const navigate = useNavigate()
+  const {register}=useAuthCalls()
 
   const registerSchema=object({
 
@@ -86,7 +86,7 @@ const Register = () => {
           }}
           validationSchema={registerSchema}
           onSubmit={(values, actions)=>{
-            // register(values)
+            register(values)
             actions.resetForm()
             actions.setSubmitting(false)
           }}
