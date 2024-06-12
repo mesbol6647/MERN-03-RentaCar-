@@ -10,18 +10,19 @@ import TextField from "@mui/material/TextField"
 import { Button } from "@mui/material"
 import { Form, Formik } from "formik"
 import { object, string, number, date, InferType } from 'yup';
+
 import useAuthCalls from "../service/useAuthCalls"
 
 
 
 const Login = () => {
-  const {login}=useAuthCalls()
+   const {login}=useAuthCalls()
   
   const loginSchema = object({
     
-    email: string().email("Lütfen geçerli bir email giriniz").required("Email girişi zorunludur"),
+    email: string().email("Please enter a valid email ").required("Email is a required field"),
     password: string()
-    .required("Şifre zorunludur.")
+    .required("Password is a required field")
     .min(8, "Şifre en az 8 karakter olmalıdır.")
     .max(16, "Şifre en fazla 16 karakter olmalıdır.")
     .matches(/\d+/, "Şifre en az bir rakam içermelidir")
@@ -71,8 +72,11 @@ const Login = () => {
 initialValues={{email:"", password:""}}
 validationSchema={loginSchema}
 onSubmit={(values, actions)=>{
+  //? TODO login(post) isteği
+  //? Veriler global state'e aktarilabilir  
+  //? Navigasyon yapılabilir
   login(values)
-  actions.resetForm()
+  actions.resetForm()  //?form silinir
   actions.setSubmitting(false)
 }}
 > 
@@ -109,21 +113,17 @@ onSubmit={(values, actions)=>{
             </Button>
           </Box></Form>
 )}
-
-
-
-
 </Formik>
           
 
-          <Box sx={{ textAlign: "center", mt: 2 }}>
+          <Box sx={{ textAlign: "center", mt: 2, mb:2 }}>
             <Link to="/register">Do you have not an account?</Link>
           </Box>
         </Grid>
 
         <Grid item xs={10} sm={7} md={6}>
           <Container>
-            <img src={image} alt="img" />
+            <img src={image} alt="img"  />
           </Container>
         </Grid>
       </Grid>
