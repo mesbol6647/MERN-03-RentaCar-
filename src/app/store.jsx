@@ -5,7 +5,7 @@ import storage from "redux-persist/lib/storage"
 
 
 const persistConfig = {
-  key: rootShouldForwardProp,
+  key: "root",
   storage,
 }
 const persistedReducer = persistReducer(persistConfig, authReducer)
