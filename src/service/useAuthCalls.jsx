@@ -19,7 +19,7 @@ const useAuthCalls = () => {
         // const {data} = await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/login`,
         //     userInfo
         // )
-        const {data}=await axiosPublic("/auth/login", userInfo) 
+         const {data}=await axiosPublic.post("/auth/login", userInfo) 
         dispatch(loginSuccess(data))
         toastSuccessNotify("Login is Success")
         navigate("/home" )

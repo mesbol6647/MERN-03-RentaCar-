@@ -43,15 +43,15 @@ const Login = () => {
         }}
       >
         <Grid item xs={12} mb={3}>
-          <Typography variant="h3" color="primary" align="center">
-           RENT A CAR APP
+          <Typography variant="h3" color='#be123c' align="center">
+           RENT A CAR 
           </Typography>
         </Grid>
 
         <Grid item xs={12} sm={10} md={6}>
           <Avatar
             sx={{
-              backgroundColor: "secondary.light",
+              backgroundColor: '#be123c',
               m: "auto",
               width: 40,
               height: 40,
@@ -108,7 +108,7 @@ onSubmit={(values, actions)=>{
               error={touched.password && Boolean(errors.password)}
               helperText={errors.password}
             />
-            <Button variant="contained" type="submit">
+            <Button variant="contained" type="submit" sx={{backgroundColor: "#be123c"}}>
               Submit
             </Button>
           </Box></Form>
