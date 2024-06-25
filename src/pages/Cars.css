@@ -1,0 +1,43 @@
+.tour-img {
+    transition: transform 0.5s;
+    border-radius: 1rem;
+    max-height: 230px;
+    width: 450px;
+  }
+  .tour-img:hover {
+    transform: scale(1.03);
+    border: 2px solid red;
+    cursor: pointer;
+  }
+  .car-card {
+    /* background-color: rgb(250, 223, 223); */
+    background-color: #f5f3f3;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .car-card img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .car-card h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .car-card .list-group {
+    width: 100%;
+  }
+  .rent-button-container {
+    width: 100%;
+    text-align: center;
+    /* margin-top: auto;  */
+    
+  }
+  

@@ -1,0 +1,291 @@
+export const carData=()=>[
+    
+    {
+        plateNumber: "34ABC345",
+        brand: "Opel",
+        model: "Astra",
+        year: 2021,
+        isAutomatic: false,
+        pricePerDay: 189.99,
+        isPublish: false,
+        isAvailable: false,
+        image: "./images/opel.jpg"
+    },
+    {
+        plateNumber: "34DEF678",
+        brand: "BMW",
+        model: "X5",
+        year: 2020,
+        isAutomatic: true,
+        pricePerDay: 299.99,
+        isPublish: true,
+        isAvailable: true,
+        image: "./images/2023-bmw-x5.jpg"
+    },
+    {
+        plateNumber: "34GHI910",
+        brand: "Audi",
+        model: "A4",
+        year: 2019,
+        isAutomatic: true,
+        pricePerDay: 249.99,
+        isPublish: true,
+        isAvailable: false,
+        image: "./images/audi.jpg"
+    },
+    {
+        plateNumber: "34JKL112",
+        brand: "Mercedes",
+        model: "C200",
+        year: 2018,
+        isAutomatic: false,
+        pricePerDay: 279.99,
+        isPublish: false,
+        isAvailable: true,
+        image: "./images/mercedes.jpg"
+    },
+    {
+        plateNumber: "34MNO131",
+        brand: "Volkswagen",
+        model: "Golf",
+        year: 2022,
+        isAutomatic: true,
+        pricePerDay: 199.99,
+        isPublish: true,
+        isAvailable: true,
+        image: "./images/golf.jpg"
+    },
+    {
+        plateNumber: "34PQR145",
+        brand: "Toyota",
+        model: "Corolla",
+        year: 2017,
+        isAutomatic: false,
+        pricePerDay: 169.99,
+        isPublish: false,
+        isAvailable: false,
+        image: "./images/toyota.png"
+    },
+    {
+        plateNumber: "34STU167",
+        brand: "Honda",
+        model: "Civic",
+        year: 2021,
+        isAutomatic: true,
+        pricePerDay: 189.99,
+        isPublish: true,
+        isAvailable: true,
+        image: "./images/honda.jpeg"
+    },
+    {
+        plateNumber: "34VWX189",
+        brand: "Ford",
+        model: "Focus",
+        year: 2020,
+        isAutomatic: false,
+        pricePerDay: 159.99,
+        isPublish: false,
+        isAvailable: false,
+         image: "./images/ford.jpg"
+    },
+    {
+        plateNumber: "34YZA123",
+        brand: "Peugeot",
+        model: "208",
+        year: 2019,
+        isAutomatic: true,
+        pricePerDay: 179.99,
+        isPublish: true,
+        isAvailable: true,
+         image: "./images/peugeot.jpg"
+    },
+    {
+        plateNumber: "34BCD456",
+        brand: "Renault",
+        model: "Clio",
+        year: 2018,
+        isAutomatic: false,
+        pricePerDay: 169.99,
+        isPublish: false,
+        isAvailable: false,
+      image: "./images/renault.jpg"
+    },
+    {
+        plateNumber: "34EFG789",
+        brand: "Hyundai",
+        model: "Elantra",
+        year: 2021,
+        isAutomatic: true,
+        pricePerDay: 199.99,
+        isPublish: true,
+        isAvailable: true,
+        image: "./images/hyundai.jpg"
+    },
+    {
+        plateNumber: "34HIJ101",
+        brand: "Kia",
+        model: "Sportage",
+        year: 2020,
+        isAutomatic: false,
+        pricePerDay: 229.99,
+        isPublish: false,
+        isAvailable: false,
+        image: "./images/kia.jpg"
+    },
+    {
+        plateNumber: "34KLM111",
+        brand: "Mazda",
+        model: "CX-5",
+        year: 2019,
+        isAutomatic: true,
+        pricePerDay: 239.99,
+        isPublish: true,
+        isAvailable: true,
+        image: "./images/mazda.jpeg"
+    },
+    {
+        plateNumber: "34NOP121",
+        brand: "Subaru",
+        model: "Impreza",
+        year: 2018,
+        isAutomatic: false,
+        pricePerDay: 219.99,
+        isPublish: false,
+        isAvailable: false,
+        image: "./images/subaru.jpeg"
+    },
+    {
+        plateNumber: "34QRS131",
+        brand: "Nissan",
+        model: "Altima",
+        year: 2022,
+        isAutomatic: true,
+        pricePerDay: 249.99,
+        isPublish: true,
+        isAvailable: true,
+         image: "./images/nissan.jpeg"
+    },
+    {
+        plateNumber: "34TUV145",
+        brand: "Chevrolet",
+        model: "Malibu",
+        year: 2021,
+        isAutomatic: false,
+        pricePerDay: 259.99,
+        isPublish: false,
+        isAvailable: false,
+        image: "./images/chevrolet.jpeg"
+    },
+    {
+        plateNumber: "34WXY167",
+        brand: "Lexus",
+        model: "RX",
+        year: 2020,
+        isAutomatic: true,
+        pricePerDay: 299.99,
+        isPublish: true,
+        isAvailable: true,
+         image: "./images/lexus.jpg"
+    },
+    {
+        plateNumber: "34ZAB189",
+        brand: "Tesla",
+        model: "Model 3",
+        year: 2019,
+        isAutomatic: true,
+        pricePerDay: 349.99,
+        isPublish: true,
+        isAvailable: true,
+         image: "./images/tesla.jpeg"
+    },
+    {
+        plateNumber: "34CDE123",
+        brand: "Volvo",
+        model: "XC90",
+        year: 2018,
+        isAutomatic: false,
+        pricePerDay: 329.99,
+        isPublish: false,
+        isAvailable: false,
+        image: "./images/volvo.jpeg"
+    },
+    {
+        plateNumber: "34FGH456",
+        brand: "Jaguar",
+        model: "F-Pace",
+        year: 2021,
+        isAutomatic: true,
+        pricePerDay: 399.99,
+        isPublish: true,
+        isAvailable: true,
+       image: "./images/jaguar.jpeg"
+    },
+    {
+        plateNumber: "34IJK789",
+        brand: "Porsche",
+        model: "Cayenne",
+        year: 2020,
+        isAutomatic: false,
+        pricePerDay: 459.99,
+        isPublish: false,
+        isAvailable: false,
+         image: "./images/porsche.jpg"
+    },
+    {
+        plateNumber: "34LMN101",
+        brand: "Ferrari",
+        model: "Portofino",
+        year: 2019,
+        isAutomatic: true,
+        pricePerDay: 899.99,
+        isPublish: true,
+        isAvailable: true,
+        image: "./images/ferrari.jpeg"
+    },
+    {
+        plateNumber: "34OPQ111",
+        brand: "Lamborghini",
+        model: "Huracan",
+        year: 2018,
+        isAutomatic: false,
+        pricePerDay: 999.99,
+        isPublish: false,
+        isAvailable: false,
+         image: "./images/lamborgini.jpg"
+    },
+    {
+        plateNumber: "34RST121",
+        brand: "Bentley",
+        model: "Continental",
+        year: 2022,
+        isAutomatic: true,
+        pricePerDay: 899.99,
+        isPublish: true,
+        isAvailable: true,
+         image: "./images/bentley.jpeg"
+    },
+    {
+        plateNumber: "34UVW145",
+        brand: "Rolls Royce",
+        model: "Ghost",
+        year: 2021,
+        isAutomatic: false,
+        pricePerDay: 1199.99,
+        isPublish: false,
+        isAvailable: false,
+         image: "./images/rollsroyce.jpeg"
+    },
+    {
+        plateNumber: "34XYZ167",
+        brand: "Maserati",
+        model: "Ghibli",
+        year: 2020,
+        isAutomatic: true,
+        pricePerDay: 799.99,
+        isPublish: true,
+        isAvailable: true,
+        image: "./images/maserati.jpeg"
+    },
+    
+    
+]
