@@ -108,7 +108,7 @@ onSubmit={(values, actions)=>{
               error={touched.password && Boolean(errors.password)}
               helperText={errors.password}
             />
-            <Button variant="contained" type="submit" sx={{backgroundColor: "#be123c"}}>
+            <Button variant="contained" type="submit" sx={{backgroundColor: "#be123c" , display: 'flex', justifyContent: 'center' }}>
               Submit
             </Button>
           </Box></Form>

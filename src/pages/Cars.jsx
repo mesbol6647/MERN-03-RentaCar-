@@ -57,7 +57,7 @@
     // export default Cars
 
 
-    import { carData } from "../helper/data";
+import { carData } from "../helper/data";
 import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
@@ -65,14 +65,17 @@ import Row from "react-bootstrap/Row";
 import { Button } from "react-bootstrap";
 import ListGroup from "react-bootstrap/ListGroup";
 import "./Cars.css";
+import { useNavigate } from "react-router-dom";
 
 const Cars = () => {
   const [show, setShow] = useState(false);
   const [selectedTourName, setSelectedTourName] = useState("");
+  const navigate=useNavigate()
 
-  const handleClick = (tourName) => {
+  const handleClick = () => {
     setShow(true);
-    setSelectedTourName(tourName);
+    setSelectedTourName();
+    navigate('/cars')
   };
 
   const data = carData();
@@ -99,7 +102,10 @@ const Cars = () => {
                 <ListGroup.Item>Price: {item.pricePerDay}</ListGroup.Item>
               </ListGroup>
               <div className="rent-button-container">
-                <Button style={{ backgroundColor:"#be123c ", padding: "5px 50px", border:"none", fontSize:"1.2rem" }}>Rent</Button>
+                <Button
+                 style={{ backgroundColor:"#be123c ", padding: "5px 50px", border:"none", fontSize:"1.2rem" }}
+                 onClick={()=>handleClick()}
+                 >Rent</Button>
               </div>
             </div>
           </Col>

@@ -6,7 +6,7 @@ import PrivateRouter from "./PrivateRouter";
 import Dashboard from "../pages/Dashboard";
 import Cars from "../pages/Cars";
 import Navbar from "../components/Navbar"
-import RentAcar from "../pages/RenAcar";
+import RentAcar from "../pages/RentAcar";
 import Blog from "../pages/Blog";
 import Contact from "../pages/Contact";
 
@@ -19,8 +19,8 @@ const AppRouter = () => {
         <Route path="register" element={<Register />} />
         <Route path="/" element={<PrivateRouter />}>
           <Route path="home" element={<Dashboard />} />
-          <Route path="cars" element={<Cars />} />
-          <Route path="rent-car" element={<RentAcar />} />
+          <Route path="rent" element={<Cars />} />
+          <Route path="cars" element={<RentAcar />} />
           <Route path="about" element={<Blog />} />
           <Route path="about" element={<Contact />} />
 

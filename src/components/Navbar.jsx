@@ -14,12 +14,14 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import image from "../assets/result.svg"
 import useAuthCalls from "../service/useAuthCalls";
+import { useNavigate } from 'react-router-dom'; // React Router kullanıyorsanız ekleyin
 
-const pages = ['Home','Cars', 'Rent Car', 'Blog','Contact'];
+const pages = ['Home','Rent', 'Cars', 'Blog','Contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Navbar() {
   const { logout } = useAuthCalls();
+  const navigate = useNavigate(); // React Router'ın useNavigate kancasını kullanarak yönlendirme yapın
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -38,12 +40,16 @@ function Navbar() {
     setAnchorElUser(null);
   };
 
+  const handleNavigate = (path) => {
+    navigate(path);
+    handleCloseNavMenu();
+  };
+
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#be123c' }}>
+    <AppBar position="static" sx={{ backgroundColor: '#F6F1E9' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-        <Box component="img" src={image} alt="img" width="30px" height={"18px"} sx={{ marginRight: '60px' ,  display: { xs: 'none', md: 'flex' }, mr: 1  }} />
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
+          <Box component="img" src={image} alt="img" width="30px" height={"18px"} sx={{ marginRight: '60px' ,  display: { xs: 'none', md: 'flex' }, mr: 1  }} />
           <Typography
             variant="h6"
             noWrap
@@ -55,7 +61,7 @@ function Navbar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: 'black',
               textDecoration: 'none',
             }}
           >
@@ -69,7 +75,7 @@ function Navbar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color="black"
             >
               <MenuIcon />
             </IconButton>
@@ -92,8 +98,8 @@ function Navbar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page} onClick={() => handleNavigate(`/${page.toLowerCase().replace(' ', '-')}`)}>
+                  <Typography textAlign="center" >{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -113,7 +119,7 @@ function Navbar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: 'black',
               textDecoration: 'none',
             }}
           >
@@ -122,10 +128,11 @@ function Navbar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
+                
                 key={page}
-                onClick={handleCloseNavMenu}
-                href={`/${page.toLowerCase().replace(' ', '-')}`} 
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                onClick={() => handleNavigate(`/${page.toLowerCase().replace(' ', '-')}`)}
+                sx={{ my: 2, color: 'black', fontWeight: 'bold', display: 'block' }}
+                
               >
                 {page}
               </Button>
@@ -166,4 +173,5 @@ function Navbar() {
     </AppBar>
   );
 }
+
 export default Navbar;
