@@ -106,11 +106,25 @@
 
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { useState } from 'react';
+import AddReserve from './AddReserve';
+import { useLocation, useParams, useNavigate } from "react-router-dom";
 
 const CarCards = ({ data }) => {
+  const [show, setShow] = useState(false);
+  const [reserve,setReserve]=useState("")
+  const { _id } = useParams(); //dinamik routelardaki değeri yakalar. route ayarlaması yaparken ne isim verdiysek useParams ile onu yakalarız.
+  const navigate = useNavigate();
+  const { state } = useLocation();//!navigate ile taşına veriyi useLocation() hooku ile karşılyabiliyoruz. urlde yer alan parametreleri search ile yakalayabiliyoruz.
+  
+  const handleClick = (tourName) =>{
+    setShow(true);
+    setReserve(tourName)
+  } 
   return (
   
-    
+    <> 
+    <div className="cursor-pointer" onClick={()=>navigate(`/cars/${_id}`, {state:data})}></div>
     <Card className="mb-4">
       <Card.Img variant="top" src={data.images} alt={`${data.brand} ${data.model}`} />
       <Card.Body>
@@ -121,12 +135,25 @@ const CarCards = ({ data }) => {
               <Card.Text>Price: {data.pricePerDay} per day</Card.Text>
             </div>
             <div className="mt-3">
-              <Button className="float-right ml-2">Rent Now</Button>
+              <Button
+               className="float-right ml-2"
+               onClick={()=>handleClick()}
+               >Rent Now
+               </Button>
               <Button variant="danger" className="float-right">Rent Details</Button>
             </div>
       </Card.Body>
     </Card>
-  
+     <AddReserve
+     show={show}
+     handleClose={()=>setShow(false)}              
+     reserve={reserve}
+     setReserve={setReserve}    
+           
+    
+     />
+
+</>
   );
 };
 

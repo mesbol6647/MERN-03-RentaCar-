@@ -63,7 +63,7 @@ import { SearchContext } from '../context/SearchProvider';
 import SearchCar from '../components/SearchCar';
 import CarCards from '../components/CarCards';
 import "../components/searchcar.css";
-import { Col, Row } from 'react-bootstrap'; 
+import { Col, Row, ListGroup, Button, Container } from 'react-bootstrap'; 
 
 const RentAcar = () => {
   const location = useLocation();
@@ -107,9 +107,7 @@ const RentAcar = () => {
         //     <CarCards key={data.id} data={data} />
         //   ))}
         // </div>
-        
         <Row>
-          <h3 className='text-center mb-4'>Below is a list of our vehicles available for the specified date range</h3>
         {cars.map((data) => (
           <Col key={data.id} xs={12} sm={6} md={4} lg={3}>
             <CarCards data={data} />
