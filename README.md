@@ -68,9 +68,7 @@
 
 <h2 id="layout">🎨 Layout</h2>
 
-### ERD:
 
-![ERD](./erdRentACarAPI.png)
 
 --- 
 
@@ -136,7 +134,7 @@ Special thank you for all people that contributed for this project.
 
 Here you will explain how other developers can contribute to your project. For example, explaining how can create their branches, which patterns to follow and how to open an pull request
 
-1. `git clone https://github.com/mesbol6647/BE-06-RENTACAR-API-.git`
+1. `git clone https://github.com/mesbol6647/MERN-03-RentaCar-.git`
 2. `git checkout -b feature/NAME`
 3. Follow commit patterns
 4. Open a Pull Request explaining the problem solved or feature made, if exists, append screenshot of visual modifications and wait for the review!
@@ -147,25 +145,6 @@ Here you will explain how other developers can contribute to your project. For e
 
 [💾 Commit pattern](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
 
-
-```
-
-
-## `Kurulum`
-
-```
-npm install veya yarn
-```
-
-## `Kullanilan Kutuphaneler`
-
-
-
-## `Kullanilacak Araclar`
-
-- `Redux Dev Tools` : Chrome uzerinde calisan ve global state uzerinde yapilan tum degisikliklerin takip edilmesini saglayan tarayici uzantisidir. Indirmek icin [tiklayiniz.](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?utm_source=chrome-ntp-icon)`
-
-## Uygulamanın Canlı Ornegi:
 
 https://rentacar6647.vercel.app/
 
