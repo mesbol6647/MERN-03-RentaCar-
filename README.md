@@ -1,11 +1,90 @@
-## `Kurulum`
+<h1 align="center" style="font-weight: bold;">MERN-03 Project(RENT A CAR)     
+    <img src="https://github.com/mesbol6647/BE-04--Pizza-Api-/blob/main/mongo.png" alt="Image Example" width="60px">
+    <img src="https://github.com/mesbol6647/BE-04--Pizza-Api-/blob/main/node-express.png" alt="Image Example" width="80px">
+    <img src="https://github.com/mesbol6647/JS-01-Todos-/blob/main/images/8621-javascript.png" alt="Image Example" width="50px">
+ </h1>
 
-```
-npm install veya yarn
-```
+<p align="center">
+ <a href="#tech">Technologies</a> • 
+ <a href="#started">Getting Started</a> • 
+  <a href="#colab">Collaborators</a> •
+ <a href="#contribute">Contribute</a>
+</p>
 
-## `Kullanilan Kutuphaneler`
+<p align="center">
+    <h2 id="description">Description</h2>
 
+
+### Rent A Car Project 
+
+- Customers;
+  - can select start and end date and see the list of available cars on selected dates.
+  - can not reserve cars which are reserved by other customers on selected time period.
+  - can choose a car on the list and reserve that car, but can not reserve more than one car on a selected time period,
+  - can see the list of their reservations including past ones.
+  - can list, create, read their reservations.
+  - can not update, delete reservations.
+
+- Admins;
+  - can make CRUD operations on Car table,
+  - can make CRUD operations on Customer (User) table,
+  - can make CRUD operations on Reservation table,
+
+- It can be createdId and updatedId in Car model.
+- There will be searching, sorting and pagination capabilities on list views.
+
+
+---
+
+###  Araç Kiralama Projesi
+
+* Müşteriler:
+  * Tarih aralığı belirtip müsait araç listeleyebilir.
+  * Rezerve edilmiş bir aracı, o tarihlerde rezerve edemez.
+  * Seçilen tarih aralığında araç rezerve edilebilir, ancak aynı tarih aralığında ikinci bir araç kiralayamaz.
+  * Rezervasyonlarını listeyebilir, ekleyebilir, okuyabilir.
+  * Rezervasyonlarını güncelleyemez, silemez.
+* Yöneticiler:
+  * Araba tablosu CRUD işlemleri
+  * Müşteri (User) tablosu CRUD işlemleri
+  * Reservasyon tablosu CRUD işlemleri
+
+* Araba tablosunda createdId ve updatedId olabilir.
+* Listeleme ekranlarında arama, sıralama ve sayfalama imkanları olacaktır.
+
+---
+
+
+<h2 id="technologies">💻 Features </h2>
+
+- $or :Allows users to query the database to find documents that match any of the specified conditions.
+- $nor:Enables querying the database to find documents that do not match any of the specified conditions.
+- $nin:Provides the ability to query the database to find documents where a specified field's value is not in a given array of values.
+- distinct:Retrieves distinct values for a specified field across a single collection.
+- Custom Filter:Allows users to define and apply custom filtering logic to query the database based on specific criteria. This feature enables complex and flexible data retrieval by combining multiple conditions and logical operators.
+- Populate:Mongoose method used to replace a path in a document with actual documents from other collections. It's commonly used to reference related documents.
+
+
+
+<h2 id="layout">🎨 Layout</h2>
+
+### ERD:
+
+![ERD](./erdRentACarAPI.png)
+
+--- 
+
+<h2 id="technologies">💻 Technologies</h2>
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- Token
+- Filter Search Sorting Pagination
+- Sync
+- Multer
+- Morgan
 - `@reduxjs/toolkit`
 - `react-redux`
 - `axios`
@@ -14,105 +93,79 @@ npm install veya yarn
 - `@emotion/react`
 - `@emotion/styled`
 
+<h2 id="started">🚀 Getting started</h2>
+
+Here you describe how to run your project locally
+
+
+<h3>Cloning</h3>
+
+How to clone your project
+
+```bash
+git clone 
+```
+
+<h3>Starting</h3>
+
+How to start your project
+
+```bash
+cd project-name
+npm some-command-to-run
+```
+
+<h2 id="colab">🤝 Collaborators</h2>
+
+Special thank you for all people that contributed for this project.
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/81535131?s=400&u=9c81682926b542ea5724b9c7f3186e7f3a68e495&v=4" width="100px;" alt="Mesut Bolat Profile Picture"/><br>
+        <sub>
+          <b>Mesut Bolat</b>
+        </sub>
+      </a>
+    </td>     
+  </tr>
+</table>
+
+<h2 id="contribute">📫 Contribute</h2>
+
+Here you will explain how other developers can contribute to your project. For example, explaining how can create their branches, which patterns to follow and how to open an pull request
+
+1. `git clone https://github.com/mesbol6647/BE-06-RENTACAR-API-.git`
+2. `git checkout -b feature/NAME`
+3. Follow commit patterns
+4. Open a Pull Request explaining the problem solved or feature made, if exists, append screenshot of visual modifications and wait for the review!
+
+<h3>Documentations that might help</h3>
+
+[📝 How to create a Pull Request](https://www.atlassian.com/br/git/tutorials/making-a-pull-request)
+
+[💾 Commit pattern](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
+
+
+```
+
+
+## `Kurulum`
+
+```
+npm install veya yarn
+```
+
+## `Kullanilan Kutuphaneler`
+
+
+
 ## `Kullanilacak Araclar`
 
 - `Redux Dev Tools` : Chrome uzerinde calisan ve global state uzerinde yapilan tum degisikliklerin takip edilmesini saglayan tarayici uzantisidir. Indirmek icin [tiklayiniz.](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?utm_source=chrome-ntp-icon)`
 
 ## Uygulamanın Canlı Ornegi:
 
-https://stock-new.netlify.app/
+https://rentacar6647.vercel.app/
 
-<!-- <a href="#" className="block rounded-lg p-4 shadow-sm shadow-indigo-100">
-  <img
-    alt=""
-    src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-    className="h-56 w-full rounded-md object-cover"
-  />
-
-  <div className="mt-2">
-    <dl>
-      <div>
-        <dt className="sr-only">Price</dt>
-
-        <dd className="text-sm text-gray-500">$240,000</dd>
-      </div>
-
-      <div>
-        <dt className="sr-only">Address</dt>
-
-        <dd className="font-medium">123 Wallaby Avenue, Park Road</dd>
-      </div>
-    </dl>
-
-    <div className="mt-6 flex items-center gap-8 text-xs">
-      <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-        <svg
-          className="size-4 text-indigo-700"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
-          />
-        </svg>
-
-        <div className="mt-1.5 sm:mt-0">
-          <p className="text-gray-500">Parking</p>
-
-          <p className="font-medium">2 spaces</p>
-        </div>
-      </div>
-
-      <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-        <svg
-          className="size-4 text-indigo-700"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-          />
-        </svg>
-
-        <div className="mt-1.5 sm:mt-0">
-          <p className="text-gray-500">Bathroom</p>
-
-          <p className="font-medium">2 rooms</p>
-        </div>
-      </div>
-
-      <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-        <svg
-          className="size-4 text-indigo-700"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-          />
-        </svg>
-
-        <div className="mt-1.5 sm:mt-0">
-          <p className="text-gray-500">Bedroom</p>
-
-          <p className="font-medium">4 rooms</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</a> -->
