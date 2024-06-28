@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { SearchContext } from '../context/SearchProvider';
+import {toastErrorNotify, toastSuccessNotify} from "../helper/ToastNotify"
 
 function AddReserve({ show, handleClose, }) {  
   const { startDate, endDate, setStartDate, setEndDate } = useContext(SearchContext);  
@@ -34,10 +35,11 @@ function AddReserve({ show, handleClose, }) {
   const handleReserve = async () => {
     try {
       console.log("Preparing to send POST request...");
-      console.log("Request body:", { carId, startDate,endDate, amount });
+      // console.log("Request body:", { carId, startDate,endDate, amount });
+      console.log("Request body:", {  startDate,endDate, amount });
 
       const response = await axios.post("https://be-06-rentacar-api.vercel.app/reservations", {
-        carId,
+        //carId,
         startDate,
         endDate,
         amount,
@@ -51,6 +53,7 @@ function AddReserve({ show, handleClose, }) {
       } else {
         console.log("Failed to create reservation:", response.data.message);
       }
+      toastSuccessNotify("Reserve is Success")
     } catch (error) {
       if (error.response) {
         console.error("POST request failed with response:", error.response.data);
@@ -59,6 +62,7 @@ function AddReserve({ show, handleClose, }) {
       } else {
         console.error("Error in setting up the POST request:", error.message);
       }
+      toastErrorNotify("Reserve is failed")
     }
   };
 
@@ -71,7 +75,7 @@ function AddReserve({ show, handleClose, }) {
         <Modal.Body>
 
           <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="roomId">
+          {/* <Form.Group className="mb-3" controlId="roomId">
               <Form.Label>Room Number:{carId}</Form.Label>
               <Form.Control
                 // type="hidden"
@@ -79,7 +83,7 @@ function AddReserve({ show, handleClose, }) {
                 value={carId}
                 onChange={(e) => setCarId(e.target.value)}
               />
-            </Form.Group>          
+            </Form.Group>           */}
             
             <Form.Group className="mb-3" controlId="amount">
               <Form.Label>amount($/gece)</Form.Label>
